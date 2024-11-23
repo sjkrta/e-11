@@ -5,9 +5,10 @@ export const formatURL = (path) => {
 };
 
 export const formatCurrency = (amount) => {
-  return new Intl.NumberFormat("en-AU", {
+  const formatter = new Intl.NumberFormat("en-AU", {
     style: "currency",
     currency: "AUD",
     minimumFractionDigits: 2,
   });
+  return formatter.format(amount);
 };

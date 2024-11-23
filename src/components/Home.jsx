@@ -1,5 +1,5 @@
-import Products from "./Products";
-import Posts from "./Posts";
+import Products from "../pages/Products";
+import Posts from "../pages/Posts";
 import useHttp from "../hooks/useHttp";
 import { formatURL } from "../utils";
 
@@ -16,13 +16,13 @@ const Home = () => {
   } = useHttp(formatURL("posts"));
 
   return (
-    <div>
+    <div className="p-4 bg-light">
       <Products
-        products={products}
+        data={products}
         loading={productsLoading}
         error={productsError}
       />
-      <Posts posts={posts} loading={postsLoading} error={postsError} />
+      <Posts data={posts} loading={postsLoading} error={postsError} />
     </div>
   );
 };
