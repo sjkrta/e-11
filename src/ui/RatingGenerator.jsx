@@ -9,14 +9,18 @@ const StarRating = ({ rating }) => {
   const starEmptyIcon = <i className="far fa-star" />;
 
   const star = new Array(Math.floor(rating)).fill(starIcon);
-  const starHalf = new Array(Math.round(rating - fullStarRating)).fill(starHalfIcon);
-  const starEmpty = new Array(5 - (star.length + starHalf.length)).fill(starEmptyIcon)
+  const starHalf = new Array(Math.round(rating - fullStarRating)).fill(
+    starHalfIcon
+  );
+  const starEmpty = new Array(5 - (star.length + starHalf.length)).fill(
+    starEmptyIcon
+  );
 
   return (
-    <div>
-      <div className="text-warning">
-        {star}{starHalf}{starEmpty}
-      </div>
+    <div className="text-warning">
+      {[...star, ...starHalf, ...starEmpty].map((s, i) => {
+        return <React.Fragment key={i}>{s}</React.Fragment>;
+      })}
     </div>
   );
 };

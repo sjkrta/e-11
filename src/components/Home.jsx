@@ -2,6 +2,7 @@ import Products from "../pages/Products";
 import Posts from "../pages/Posts";
 import useHttp from "../hooks/useHttp";
 import { formatURL } from "../utils";
+import Cart from "../pages/Cart";
 
 const Home = () => {
   const {
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <div className="p-4 bg-light">
+      <Cart data={products} />
       <Products
         data={products}
         loading={productsLoading}
