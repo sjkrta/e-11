@@ -1,14 +1,18 @@
-import Home from "./components/Home";
-import Layout from "./layouts/Layout";
+import { BrowserRouter } from "react-router";
 import { CartContextProvider } from "./store";
+import { AppRoutes } from "./routes";
+
 
 function App() {
   return (
+    <BrowserRouter>
     <CartContextProvider>
-      <Layout>
+      <AppRoutes/>
+      {/* <Layout>
         <Home />
-      </Layout>
-    // </CartContextProvider>
+      </Layout> */}
+     </CartContextProvider>
+    </BrowserRouter>
   );
 }
 

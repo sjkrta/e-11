@@ -1,13 +1,14 @@
-import Nb from "../components/Navbar";
-import Footer from "../components/Footer";
+import React from 'react';
+import { Outlet } from 'react-router';
+import Nb from '../components/Navbar';
+import Footer from '../components/Footer';
 
-// eslint-disable-next-line react/prop-types
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div>
-      <Nb />
-      {children}
-      <Footer />
+      <Nb/>
+      <Outlet/>
+      <Footer/>
     </div>
   );
 };
